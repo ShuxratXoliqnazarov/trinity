@@ -1,0 +1,7 @@
+export default function ContactSection() {
+	return (
+		<>
+			<h1>ContactSection</h1>
+		</>
+	)
+}
