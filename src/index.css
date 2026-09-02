@@ -5,8 +5,9 @@
 	--font-display: "Montserrat", ui-sans-serif, system-ui, sans-serif;
 	--font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
 
-	--color-accent: #29c5c5;
-	--color-accent-hover: #22a9a9;
+	--color-accent: #00a3a9;
+	--color-accent-hover: #007f84;
+	--color-accent-bright: #33b7bc;
 	--color-ink: #0c0c0e;
 	--color-ink-soft: #141519;
 	--color-ink-card: #1b1c21;
