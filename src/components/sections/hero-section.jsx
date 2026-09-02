@@ -14,15 +14,15 @@ export default function HeroSection() {
 			<div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-ink" />
 
 			<div className="relative z-10 flex flex-col items-center px-6 text-center">
-				<h1 className="font-display text-6xl font-extrabold leading-none text-white sm:text-7xl lg:text-8xl">
+				<h1 className="font-display text-6xl font-bold leading-none text-white sm:text-7xl lg:text-[5.5rem]">
 					Dubai
 				</h1>
-				<p className="mt-3 text-sm font-medium uppercase tracking-[0.35em] text-white/90 sm:text-base lg:text-lg">
+				<p className="mt-2 text-base font-normal uppercase tracking-[0.18em] text-white/90 sm:text-lg lg:text-xl">
 					Luxury Car Rental
 				</p>
 			</div>
 
-			<div className="absolute bottom-10 left-1/2 z-10 h-14 w-px -translate-x-1/2 bg-accent/70" />
+			<div className="absolute bottom-10 left-1/2 z-10 h-12 w-px -translate-x-1/2 bg-accent" />
 		</section>
 	)
 }
