@@ -1,13 +1,11 @@
 import { useState } from "react"
+import { useTranslation } from "react-i18next"
 import AudioPlayer from "../ui/audio-player"
 import Button from "../ui/button"
 import { ChevronDown, ChevronUp, SearchIcon } from "../ui/icons"
 
 const featured = {
-	title: "Rent Lamborghini Huracan STO",
-	priceLabel: "Rent is from aed",
 	price: "2 400$",
-	priceUnit: "per day",
 	image: "/cars/huracan-sto.jpg",
 }
 
@@ -24,6 +22,7 @@ function hideBroken(e) {
 }
 
 export default function PopularSection() {
+	const { t } = useTranslation()
 	const [active, setActive] = useState(2)
 	const [query, setQuery] = useState("")
 
@@ -38,7 +37,7 @@ export default function PopularSection() {
 		>
 			<div className="mx-auto max-w-[1400px]">
 				<h2 className="mb-8 font-display text-4xl font-medium text-white lg:hidden">
-					Most Popular
+					{t("popular.title")}
 				</h2>
 			</div>
 			<div className="mx-auto grid max-w-[1400px] gap-10 lg:grid-cols-2 lg:gap-16">
@@ -46,40 +45,40 @@ export default function PopularSection() {
 					<div className="relative min-h-[440px] flex-1 overflow-hidden rounded-sm bg-ink-card lg:min-h-0">
 						<img
 							src={featured.image}
-							alt={featured.title}
+							alt={t("popular.featuredTitle")}
 							onError={hideBroken}
 							className="absolute inset-0 h-full w-full object-cover"
 						/>
 						<div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/10" />
 						<div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-6">
 							<h3 className="max-w-[55%] font-display text-2xl font-medium leading-tight text-white">
-								{featured.title}
+								{t("popular.featuredTitle")}
 							</h3>
 							<div className="text-right">
 								<p className="text-[11px] uppercase tracking-wide text-white/60">
-									{featured.priceLabel}
+									{t("popular.priceLabel")}
 								</p>
 								<p className="font-display text-2xl font-semibold text-white">
 									{featured.price}
 								</p>
-								<p className="text-[11px] text-white/60">{featured.priceUnit}</p>
+								<p className="text-[11px] text-white/60">{t("popular.priceUnit")}</p>
 							</div>
 						</div>
 					</div>
 
-					<AudioPlayer src="/audio/story.mp3" />
+					<AudioPlayer src="/audio/story.mp3" label={t("popular.audioLabel")} />
 				</div>
 
 				<div className="flex flex-col">
 					<h2 className="hidden font-display text-4xl font-medium text-white lg:block lg:text-5xl">
-						Most Popular
+						{t("popular.title")}
 					</h2>
 
 					<div className="relative mt-0 lg:mt-8">
 						<input
 							value={query}
 							onChange={(e) => setQuery(e.target.value)}
-							placeholder="Car search"
+							placeholder={t("popular.searchPlaceholder")}
 							className="w-full rounded-lg border border-line bg-ink-soft px-5 py-4 pr-12 text-sm text-white placeholder:text-white/40 focus:border-accent focus:outline-none"
 						/>
 						<SearchIcon className="pointer-events-none absolute right-5 top-1/2 h-5 w-5 -translate-y-1/2 text-white/40" />
@@ -91,7 +90,7 @@ export default function PopularSection() {
 								type="button"
 								onClick={() => setActive((i) => Math.max(0, i - 1))}
 								className="text-white/40 transition-colors hover:text-white"
-								aria-label="Previous"
+								aria-label={t("popular.previous")}
 							>
 								<ChevronUp className="h-4 w-4" />
 							</button>
@@ -102,7 +101,7 @@ export default function PopularSection() {
 									setActive((i) => Math.min(brands.length - 1, i + 1))
 								}
 								className="text-white/40 transition-colors hover:text-white"
-								aria-label="Next"
+								aria-label={t("popular.next")}
 							>
 								<ChevronDown className="h-4 w-4" />
 							</button>
@@ -147,7 +146,7 @@ export default function PopularSection() {
 							size="md"
 							className="w-full sm:w-auto"
 						>
-							VIEW ALL
+							{t("popular.viewAll")}
 						</Button>
 					</div>
 				</div>

@@ -1,0 +1,120 @@
+{
+	"header": {
+		"nav": {
+			"carList": "Car List",
+			"aboutUs": "About Us",
+			"contacts": "Contacts",
+			"testimonials": "Testimonials",
+			"yachtList": "Yacht list",
+			"articles": "Articles",
+			"chauffeur": "Chauffeur",
+			"conditions": "Conditions"
+		},
+		"openMenu": "Open menu",
+		"closeMenu": "Close menu",
+		"cities": {
+			"dubai": "Dubai",
+			"moscow": "Moscow",
+			"budapest": "Budapest",
+			"wiesbaden": "Wiesbaden"
+		}
+	},
+	"hero": {
+		"title": "Dubai",
+		"subtitle": "Luxury Car Rental"
+	},
+	"popular": {
+		"title": "Most Popular",
+		"searchPlaceholder": "Car search",
+		"featuredTitle": "Rent Lamborghini Huracan STO",
+		"priceLabel": "Rent is from aed",
+		"priceUnit": "per day",
+		"audioLabel": "Listen to our story",
+		"previous": "Previous",
+		"next": "Next",
+		"viewAll": "VIEW ALL"
+	},
+	"fleet": {
+		"tabs": {
+			"specialOffer": "Special Offer",
+			"newCar": "New car",
+			"mostPopular": "Most popular",
+			"daily": "Daily"
+		},
+		"rent": "RENT",
+		"viewAll": "VIEW ALL"
+	},
+	"about": {
+		"title": "About Us",
+		"stats": {
+			"years": {
+				"unit": "year",
+				"text": "We've come a long way from a 2-people company to winning at Webby's."
+			},
+			"cars": {
+				"unit": "cars",
+				"text": "We've come a long way from a 2-people company to winning at Webby's."
+			},
+			"people": {
+				"unit": "people",
+				"text": "We've come a long way from a 2-people company to winning at Webby's."
+			}
+		},
+		"quote": {
+			"part1": "I'm with cars for over 18 years. My auto passion and ",
+			"accent1": "attention to details",
+			"part2": " will make your experience ",
+			"accent2": "with us",
+			"part3": " second to none. Guaranteed."
+		},
+		"authorName": "Kirill Aliev, MBA",
+		"authorRole": "CEO Trinity car rental boutique",
+		"photoAlt": "Trinity car rental boutique founder with the fleet"
+	},
+	"reviews": {
+		"title": "Reviews",
+		"alt": {
+			"aventador": "Client sitting on a chrome Lamborghini Aventador",
+			"huracan": "Client with a blue Lamborghini Huracan at night",
+			"greenJacket": "Client talking to the camera next to a car",
+			"gClass": "Client with a Lamborghini Aventador and a Mercedes G-Class"
+		}
+	},
+	"advantages": {
+		"title": "Advantages",
+		"items": {
+			"fleet": "40+ unique cars for rent from our fleet",
+			"delivery": "Delivery and return of cars in Dubai 24/7",
+			"insurance": "Insurance without a deductible for each car",
+			"privacy": "No video or audio recording in the car",
+			"support": "24/7 technical support",
+			"premium": "All models have a premium package"
+		}
+	},
+	"contact": {
+		"title": "Ask us anything",
+		"mapTitle": "Trinity office on the map: {{address}}",
+		"fields": {
+			"name": "Name",
+			"email": "E-mail",
+			"phone": "+7 (999) 999 - 99 - 99",
+			"message": "Message"
+		},
+		"submit": "SEND THE REQUEST",
+		"errors": {
+			"name": "Please enter your name",
+			"email": "Please enter a valid e-mail",
+			"phone": "Please enter your phone number"
+		},
+		"success": "Thank you! Your request has been sent."
+	},
+	"discount": {
+		"titleStart": "Get a discount of up to ",
+		"titleAccent": "60%",
+		"description": "Get the latest articles and business updates that you need to know, you'll even get special recommendations weekly.",
+		"emailPlaceholder": "Your email",
+		"submit": "RECEIVE",
+		"error": "Please enter a valid e-mail",
+		"success": "Thank you! Your discount is on its way."
+	}
+}

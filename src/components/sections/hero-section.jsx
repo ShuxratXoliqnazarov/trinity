@@ -1,4 +1,8 @@
+import { useTranslation } from "react-i18next"
+
 export default function HeroSection() {
+	const { t } = useTranslation()
+
 	return (
 		<section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-ink">
 			<div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_55%,#20232a_0%,#0c0c0e_70%)]" />
@@ -15,10 +19,10 @@ export default function HeroSection() {
 
 			<div className="relative z-10 flex flex-col items-center px-6 text-center">
 				<h1 className="font-display text-6xl font-bold leading-none text-white sm:text-7xl lg:text-[5.5rem]">
-					Dubai
+					{t("hero.title")}
 				</h1>
 				<p className="mt-2 text-base font-normal uppercase tracking-[0.18em] text-white/90 sm:text-lg lg:text-xl">
-					Luxury Car Rental
+					{t("hero.subtitle")}
 				</p>
 			</div>
 

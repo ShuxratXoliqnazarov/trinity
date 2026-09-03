@@ -1,0 +1,120 @@
+{
+	"header": {
+		"nav": {
+			"carList": "Автопарк",
+			"aboutUs": "О нас",
+			"contacts": "Контакты",
+			"testimonials": "Отзывы",
+			"yachtList": "Яхты",
+			"articles": "Статьи",
+			"chauffeur": "С водителем",
+			"conditions": "Условия"
+		},
+		"openMenu": "Открыть меню",
+		"closeMenu": "Закрыть меню",
+		"cities": {
+			"dubai": "Дубай",
+			"moscow": "Москва",
+			"budapest": "Будапешт",
+			"wiesbaden": "Висбаден"
+		}
+	},
+	"hero": {
+		"title": "Дубай",
+		"subtitle": "Аренда премиальных авто"
+	},
+	"popular": {
+		"title": "Популярное",
+		"searchPlaceholder": "Поиск автомобиля",
+		"featuredTitle": "Аренда Lamborghini Huracan STO",
+		"priceLabel": "Аренда от, aed",
+		"priceUnit": "в сутки",
+		"audioLabel": "Послушайте нашу историю",
+		"previous": "Назад",
+		"next": "Вперёд",
+		"viewAll": "СМОТРЕТЬ ВСЕ"
+	},
+	"fleet": {
+		"tabs": {
+			"specialOffer": "Спецпредложение",
+			"newCar": "Новинки",
+			"mostPopular": "Популярное",
+			"daily": "На сутки"
+		},
+		"rent": "АРЕНДА",
+		"viewAll": "СМОТРЕТЬ ВСЕ"
+	},
+	"about": {
+		"title": "О нас",
+		"stats": {
+			"years": {
+				"unit": "лет",
+				"text": "Мы прошли большой путь от компании из двух человек до победы на Webby's."
+			},
+			"cars": {
+				"unit": "авто",
+				"text": "Мы прошли большой путь от компании из двух человек до победы на Webby's."
+			},
+			"people": {
+				"unit": "человек",
+				"text": "Мы прошли большой путь от компании из двух человек до победы на Webby's."
+			}
+		},
+		"quote": {
+			"part1": "Я в мире автомобилей больше 18 лет. Моя страсть к машинам и ",
+			"accent1": "внимание к деталям",
+			"part2": " сделают ваш опыт ",
+			"accent2": "с нами",
+			"part3": " непревзойдённым. Гарантирую."
+		},
+		"authorName": "Кирилл Алиев, MBA",
+		"authorRole": "CEO Trinity car rental boutique",
+		"photoAlt": "Основатель Trinity car rental boutique рядом с автопарком"
+	},
+	"reviews": {
+		"title": "Отзывы",
+		"alt": {
+			"aventador": "Клиент на хромированном Lamborghini Aventador",
+			"huracan": "Клиент у синего Lamborghini Huracan ночью",
+			"greenJacket": "Клиент говорит на камеру рядом с автомобилем",
+			"gClass": "Клиент рядом с Lamborghini Aventador и Mercedes G-Class"
+		}
+	},
+	"advantages": {
+		"title": "Преимущества",
+		"items": {
+			"fleet": "40+ уникальных автомобилей в нашем автопарке",
+			"delivery": "Доставка и возврат автомобилей в Дубае 24/7",
+			"insurance": "Страховка без франшизы для каждого автомобиля",
+			"privacy": "Никакой видео- и аудиозаписи в салоне",
+			"support": "Техническая поддержка 24/7",
+			"premium": "Все модели в премиальной комплектации"
+		}
+	},
+	"contact": {
+		"title": "Спросите нас о чём угодно",
+		"mapTitle": "Офис Trinity на карте: {{address}}",
+		"fields": {
+			"name": "Имя",
+			"email": "E-mail",
+			"phone": "+7 (999) 999 - 99 - 99",
+			"message": "Сообщение"
+		},
+		"submit": "ОТПРАВИТЬ ЗАЯВКУ",
+		"errors": {
+			"name": "Пожалуйста, введите имя",
+			"email": "Пожалуйста, введите корректный e-mail",
+			"phone": "Пожалуйста, введите номер телефона"
+		},
+		"success": "Спасибо! Ваша заявка отправлена."
+	},
+	"discount": {
+		"titleStart": "Получите скидку до ",
+		"titleAccent": "60%",
+		"description": "Получайте свежие статьи и новости бизнеса, которые важно знать, а также еженедельные персональные рекомендации.",
+		"emailPlaceholder": "Ваш e-mail",
+		"submit": "ПОЛУЧИТЬ",
+		"error": "Пожалуйста, введите корректный e-mail",
+		"success": "Спасибо! Ваша скидка уже в пути."
+	}
+}

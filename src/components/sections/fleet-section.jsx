@@ -1,7 +1,8 @@
 import { useState } from "react"
+import { useTranslation } from "react-i18next"
 import Button from "../ui/button"
 
-const tabs = ["Special Offer", "New car", "Most popular", "Daily"]
+const tabs = ["specialOffer", "newCar", "mostPopular", "daily"]
 
 const cars = [
 	{ name: "Lamborghini Urus", image: "/cars/urus.jpg" },
@@ -15,22 +16,23 @@ function hideBroken(e) {
 }
 
 export default function FleetSection() {
+	const { t } = useTranslation()
 	const [tab, setTab] = useState(0)
 
 	return (
 		<section id="fleet" className="bg-ink px-6 py-20 lg:px-14 lg:py-28">
 			<div className="mx-auto max-w-[1400px]">
 				<div className="-mx-6 flex justify-start gap-8 overflow-x-auto px-6 [scrollbar-width:none] sm:mx-0 sm:justify-center sm:gap-14 sm:px-0">
-					{tabs.map((label, i) => (
+					{tabs.map((key, i) => (
 						<button
-							key={label}
+							key={key}
 							type="button"
 							onClick={() => setTab(i)}
 							className={`relative shrink-0 whitespace-nowrap pb-2 font-display text-base font-medium transition-colors sm:text-lg lg:text-xl ${
 								i === tab ? "text-white" : "text-white/45 hover:text-white/70"
 							}`}
 						>
-							{label}
+							{t(`fleet.tabs.${key}`)}
 							{i === tab && (
 								<span className="absolute inset-x-0 bottom-0 h-0.5 bg-accent-bright" />
 							)}
@@ -62,7 +64,7 @@ export default function FleetSection() {
 									size="none"
 									className="rounded-md border-2 border-accent-bright px-8 py-3 text-xs sm:border sm:px-5 sm:py-2.5 sm:text-[11px]"
 								>
-									RENT
+									{t("fleet.rent")}
 								</Button>
 							</div>
 						</article>
@@ -76,7 +78,7 @@ export default function FleetSection() {
 						size="md"
 						className="w-full sm:w-auto"
 					>
-						VIEW ALL
+						{t("fleet.viewAll")}
 					</Button>
 				</div>
 			</div>
