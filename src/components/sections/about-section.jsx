@@ -92,7 +92,9 @@ export default function AboutSection() {
 			<img
 				src={aboutUs}
 				alt={t("about.photoAlt")}
-				className="mt-14 h-[280px] w-full object-cover sm:h-[420px] lg:mt-20 lg:h-[620px]"
+				width={3840}
+				height={2166}
+				className="mt-14 block h-auto w-full lg:mt-20"
 			/>
 		</section>
 	)

@@ -78,7 +78,9 @@
 			"huracan": "Client with a blue Lamborghini Huracan at night",
 			"greenJacket": "Client talking to the camera next to a car",
 			"gClass": "Client with a Lamborghini Aventador and a Mercedes G-Class"
-		}
+		},
+		"previous": "Previous review",
+		"next": "Next review"
 	},
 	"advantages": {
 		"title": "Advantages",

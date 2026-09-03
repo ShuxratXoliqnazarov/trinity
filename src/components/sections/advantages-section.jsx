@@ -24,7 +24,18 @@ export default function AdvantagesSection() {
 				{t("advantages.title")}
 			</h2>
 
-			<div className="mt-12 grid gap-px bg-line sm:grid-cols-2 lg:mt-16 lg:grid-cols-3">
+			<ul className="mt-10 flex flex-col gap-5 px-6 sm:hidden">
+				{advantages.map((item) => (
+					<li key={item.key} className="flex gap-3">
+						<span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+						<span className="text-sm font-medium leading-relaxed text-white">
+							{t(`advantages.items.${item.key}`)}
+						</span>
+					</li>
+				))}
+			</ul>
+
+			<div className="mt-12 hidden gap-px bg-line sm:grid sm:grid-cols-2 lg:mt-16 lg:grid-cols-3">
 				{advantages.map((item) => (
 					<article
 						key={item.key}

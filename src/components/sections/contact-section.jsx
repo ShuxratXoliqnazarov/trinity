@@ -124,7 +124,7 @@ export default function ContactSection() {
 						/>
 
 						<div className="mt-3 flex flex-wrap items-center gap-4">
-							<Button type="submit" size="sm">
+							<Button type="submit" size="sm" className="w-full sm:w-auto">
 								{t("contact.submit")}
 							</Button>
 							{requestSent && (
