@@ -34,8 +34,13 @@ export default function PopularSection() {
 	return (
 		<section
 			id="popular"
-			className="hidden bg-ink px-6 py-20 lg:block lg:px-14 lg:py-28"
+			className="bg-ink px-6 py-20 lg:px-14 lg:py-28"
 		>
+			<div className="mx-auto max-w-[1400px]">
+				<h2 className="mb-8 font-display text-4xl font-medium text-white lg:hidden">
+					Most Popular
+				</h2>
+			</div>
 			<div className="mx-auto grid max-w-[1400px] gap-10 lg:grid-cols-2 lg:gap-16">
 				<div className="flex flex-col gap-6">
 					<div className="relative min-h-[440px] flex-1 overflow-hidden rounded-sm bg-ink-card lg:min-h-0">
@@ -66,11 +71,11 @@ export default function PopularSection() {
 				</div>
 
 				<div className="flex flex-col">
-					<h2 className="font-display text-4xl font-medium text-white lg:text-5xl">
+					<h2 className="hidden font-display text-4xl font-medium text-white lg:block lg:text-5xl">
 						Most Popular
 					</h2>
 
-					<div className="relative mt-8">
+					<div className="relative mt-0 lg:mt-8">
 						<input
 							value={query}
 							onChange={(e) => setQuery(e.target.value)}
