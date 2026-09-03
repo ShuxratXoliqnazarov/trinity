@@ -20,19 +20,19 @@ export default function FleetSection() {
 	return (
 		<section id="fleet" className="bg-ink px-6 py-20 lg:px-14 lg:py-28">
 			<div className="mx-auto max-w-[1400px]">
-				<div className="flex flex-wrap justify-center gap-8 lg:gap-14">
+				<div className="-mx-6 flex justify-start gap-8 overflow-x-auto px-6 [scrollbar-width:none] sm:mx-0 sm:justify-center sm:gap-14 sm:px-0">
 					{tabs.map((label, i) => (
 						<button
 							key={label}
 							type="button"
 							onClick={() => setTab(i)}
-							className={`relative pb-2 font-display text-lg font-medium transition-colors lg:text-xl ${
+							className={`relative shrink-0 whitespace-nowrap pb-2 font-display text-base font-medium transition-colors sm:text-lg lg:text-xl ${
 								i === tab ? "text-white" : "text-white/45 hover:text-white/70"
 							}`}
 						>
 							{label}
 							{i === tab && (
-								<span className="absolute inset-x-0 bottom-0 h-px bg-accent-bright" />
+								<span className="absolute inset-x-0 bottom-0 h-0.5 bg-accent-bright" />
 							)}
 						</button>
 					))}
