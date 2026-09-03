@@ -10,6 +10,7 @@ const variants = {
 }
 
 const sizes = {
+	none: "",
 	sm: "text-[11px] px-5 py-2.5",
 	md: "text-xs px-9 py-4",
 	lg: "text-sm px-12 py-5",

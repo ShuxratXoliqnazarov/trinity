@@ -120,9 +120,7 @@ export default function Header() {
 						<div className="hidden lg:block">
 							<Dropdown items={cities} value={city} onChange={setCity} />
 						</div>
-						<div className="hidden lg:block">
-							<Dropdown items={langs} value={lang} onChange={setLang} />
-						</div>
+						<Dropdown items={langs} value={lang} onChange={setLang} />
 					</div>
 				</div>
 			</header>

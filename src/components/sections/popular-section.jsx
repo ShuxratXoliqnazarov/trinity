@@ -33,14 +33,14 @@ export default function PopularSection() {
 	return (
 		<section id="popular" className="bg-ink px-6 py-20 lg:px-14 lg:py-28">
 			<div className="mx-auto grid max-w-[1400px] gap-10 lg:grid-cols-2 lg:gap-16">
-				<div className="relative min-h-[380px] overflow-hidden rounded-sm bg-ink-card lg:min-h-0">
+				<div className="relative min-h-[440px] overflow-hidden rounded-sm bg-ink-card lg:min-h-0">
 					<img
 						src={featured.image}
 						alt={featured.title}
 						onError={hideBroken}
 						className="absolute inset-0 h-full w-full object-cover"
 					/>
-					<div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/10" />
+					<div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/10" />
 					<div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-6">
 						<h3 className="max-w-[55%] font-display text-2xl font-medium leading-tight text-white">
 							{featured.title}
@@ -128,7 +128,12 @@ export default function PopularSection() {
 					</div>
 
 					<div className="mt-10">
-						<Button as="a" href="#fleet" size="md">
+						<Button
+							as="a"
+							href="#fleet"
+							size="md"
+							className="w-full sm:w-auto"
+						>
 							VIEW ALL
 						</Button>
 					</div>

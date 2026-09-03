@@ -42,7 +42,7 @@ export default function FleetSection() {
 					{cars.map((car) => (
 						<article
 							key={car.name}
-							className="group relative aspect-[16/10] overflow-hidden rounded-sm bg-ink-card"
+							className="group relative aspect-[3/2] overflow-hidden rounded-sm bg-ink-card sm:aspect-[16/10]"
 						>
 							<img
 								src={car.image}
@@ -52,10 +52,16 @@ export default function FleetSection() {
 							/>
 							<div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
 							<div className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-4 p-5">
-								<h3 className="font-display text-xl font-medium text-white">
+								<h3 className="font-display text-lg font-medium text-white sm:text-xl">
 									{car.name}
 								</h3>
-								<Button as="a" href="#contact" variant="secondary" size="sm">
+								<Button
+									as="a"
+									href="#contact"
+									variant="secondary"
+									size="none"
+									className="rounded-md border-2 border-accent-bright px-8 py-3 text-xs sm:border sm:px-5 sm:py-2.5 sm:text-[11px]"
+								>
 									RENT
 								</Button>
 							</div>
@@ -64,7 +70,12 @@ export default function FleetSection() {
 				</div>
 
 				<div className="mt-12 flex justify-center">
-					<Button as="a" href="#contact" size="md">
+					<Button
+						as="a"
+						href="#contact"
+						size="md"
+						className="w-full sm:w-auto"
+					>
 						VIEW ALL
 					</Button>
 				</div>
