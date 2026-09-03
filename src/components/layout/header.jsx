@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react"
+import { useTranslation } from "react-i18next"
 import Logo from "./logo"
 import {
 	BurgerIcon,
@@ -9,24 +10,27 @@ import {
 } from "../ui/icons"
 
 const navLinks = [
-	{ label: "Car List", href: "#fleet" },
-	{ label: "About Us", href: "#about" },
-	{ label: "Contacts", href: "#contact" },
+	{ key: "carList", href: "#fleet" },
+	{ key: "aboutUs", href: "#about" },
+	{ key: "contacts", href: "#contact" },
 ]
 
 const menuLinks = [
-	{ label: "Car List", href: "#fleet" },
-	{ label: "Testimonials", href: "#reviews" },
-	{ label: "Yacht list", href: "#fleet" },
-	{ label: "Articles", href: "#about" },
-	{ label: "Chauffeur", href: "#contact" },
-	{ label: "About Us", href: "#about" },
-	{ label: "Conditions", href: "#contact" },
-	{ label: "Contacts", href: "#contact" },
+	{ key: "carList", href: "#fleet" },
+	{ key: "testimonials", href: "#reviews" },
+	{ key: "yachtList", href: "#fleet" },
+	{ key: "articles", href: "#about" },
+	{ key: "chauffeur", href: "#contact" },
+	{ key: "aboutUs", href: "#about" },
+	{ key: "conditions", href: "#contact" },
+	{ key: "contacts", href: "#contact" },
 ]
 
-const cities = ["Dubai", "Moscow", "Budapest", "Wiesbaden"]
-const langs = ["ENG", "RUS"]
+const cityKeys = ["dubai", "moscow", "budapest", "wiesbaden"]
+const langs = [
+	{ value: "en", label: "ENG" },
+	{ value: "ru", label: "RUS" },
+]
 const phone = "+971 58 590 7875"
 
 function Dropdown({ items, value, onChange }) {
@@ -41,6 +45,8 @@ function Dropdown({ items, value, onChange }) {
 		return () => document.removeEventListener("mousedown", onDocClick)
 	}, [])
 
+	const current = items.find((item) => item.value === value)
+
 	return (
 		<div ref={ref} className="relative">
 			<button
@@ -48,7 +54,7 @@ function Dropdown({ items, value, onChange }) {
 				onClick={() => setOpen((v) => !v)}
 				className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.15em] text-white"
 			>
-				{value}
+				{current ? current.label : value}
 				<ChevronDown
 					className={`h-3 w-3 transition-transform ${open ? "rotate-180" : ""}`}
 				/>
@@ -56,18 +62,18 @@ function Dropdown({ items, value, onChange }) {
 			{open && (
 				<ul className="absolute right-0 top-full z-50 mt-3 min-w-40 border border-line bg-ink-soft py-2">
 					{items.map((item) => (
-						<li key={item}>
+						<li key={item.value}>
 							<button
 								type="button"
 								onClick={() => {
-									onChange(item)
+									onChange(item.value)
 									setOpen(false)
 								}}
 								className={`block w-full px-4 py-2 text-left text-xs font-semibold uppercase tracking-[0.12em] transition-colors hover:text-accent ${
-									item === value ? "text-accent" : "text-white/80"
+									item.value === value ? "text-accent" : "text-white/80"
 								}`}
 							>
-								{item}
+								{item.label}
 							</button>
 						</li>
 					))}
@@ -78,9 +84,14 @@ function Dropdown({ items, value, onChange }) {
 }
 
 export default function Header() {
+	const { t, i18n } = useTranslation()
 	const [menuOpen, setMenuOpen] = useState(false)
-	const [city, setCity] = useState(cities[0])
-	const [lang, setLang] = useState(langs[0])
+	const [city, setCity] = useState(cityKeys[0])
+
+	const cities = cityKeys.map((key) => ({
+		value: key,
+		label: t(`header.cities.${key}`),
+	}))
 
 	useEffect(() => {
 		document.body.style.overflow = menuOpen ? "hidden" : ""
@@ -98,18 +109,18 @@ export default function Header() {
 							type="button"
 							onClick={() => setMenuOpen(true)}
 							className="text-white"
-							aria-label="Open menu"
+							aria-label={t("header.openMenu")}
 						>
 							<BurgerIcon className="h-3 w-8" />
 						</button>
 						<nav className="hidden items-center gap-9 lg:flex">
 							{navLinks.map((link) => (
 								<a
-									key={link.href}
+									key={link.key}
 									href={link.href}
 									className="text-sm font-medium text-white/90 transition-colors hover:text-accent"
 								>
-									{link.label}
+									{t(`header.nav.${link.key}`)}
 								</a>
 							))}
 						</nav>
@@ -131,7 +142,11 @@ export default function Header() {
 						<div className="hidden lg:block">
 							<Dropdown items={cities} value={city} onChange={setCity} />
 						</div>
-						<Dropdown items={langs} value={lang} onChange={setLang} />
+						<Dropdown
+							items={langs}
+							value={i18n.resolvedLanguage}
+							onChange={(code) => i18n.changeLanguage(code)}
+						/>
 					</div>
 				</div>
 			</header>
@@ -146,23 +161,27 @@ export default function Header() {
 						type="button"
 						onClick={() => setMenuOpen(false)}
 						className="text-white"
-						aria-label="Close menu"
+						aria-label={t("header.closeMenu")}
 					>
 						<CloseIcon className="h-7 w-7" />
 					</button>
 					<Logo />
-					<Dropdown items={langs} value={lang} onChange={setLang} />
+					<Dropdown
+						items={langs}
+						value={i18n.resolvedLanguage}
+						onChange={(code) => i18n.changeLanguage(code)}
+					/>
 				</div>
 
 				<nav className="grid flex-1 content-center gap-x-10 gap-y-8 px-8 sm:gap-x-24 lg:mx-auto lg:max-w-3xl grid-cols-2">
 					{menuLinks.map((link, i) => (
 						<a
-							key={`${link.label}-${i}`}
+							key={`${link.key}-${i}`}
 							href={link.href}
 							onClick={() => setMenuOpen(false)}
 							className="font-display text-2xl font-medium text-white transition-colors hover:text-accent-bright sm:text-3xl"
 						>
-							{link.label}
+							{t(`header.nav.${link.key}`)}
 						</a>
 					))}
 				</nav>
