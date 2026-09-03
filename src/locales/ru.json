@@ -78,7 +78,9 @@
 			"huracan": "Клиент у синего Lamborghini Huracan ночью",
 			"greenJacket": "Клиент говорит на камеру рядом с автомобилем",
 			"gClass": "Клиент рядом с Lamborghini Aventador и Mercedes G-Class"
-		}
+		},
+		"previous": "Предыдущий отзыв",
+		"next": "Следующий отзыв"
 	},
 	"advantages": {
 		"title": "Преимущества",
