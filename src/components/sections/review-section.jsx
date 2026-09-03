@@ -1,34 +1,15 @@
+import { useTranslation } from "react-i18next"
 import firstImg from "../../assets/images/first-img.png"
 import fourthImg from "../../assets/images/fourth-img.png"
 import secondImg from "../../assets/images/second-img.png"
 import thirdImg from "../../assets/images/third-img.png"
 
 const reviews = [
-	{
-		id: "aventador",
-		image: firstImg,
-		alt: "Client sitting on a chrome Lamborghini Aventador",
-		hasPlay: false,
-	},
-	{
-		id: "huracan",
-		image: secondImg,
-		alt: "Client with a blue Lamborghini Huracan at night",
-		// the play badge is part of this photo, so no overlay is rendered on top of it
-		hasPlay: false,
-	},
-	{
-		id: "green-jacket",
-		image: thirdImg,
-		alt: "Client talking to the camera next to a car",
-		hasPlay: false,
-	},
-	{
-		id: "g-class",
-		image: fourthImg,
-		alt: "Client with a Lamborghini Aventador and a Mercedes G-Class",
-		hasPlay: false,
-	},
+	{ id: "aventador", image: firstImg, hasPlay: false },
+	// the play badge is part of this photo, so no overlay is rendered on top of it
+	{ id: "huracan", image: secondImg, hasPlay: false },
+	{ id: "greenJacket", image: thirdImg, hasPlay: false },
+	{ id: "gClass", image: fourthImg, hasPlay: false },
 ]
 
 function PlayButton() {
@@ -47,10 +28,12 @@ function PlayButton() {
 }
 
 export default function ReviewSection() {
+	const { t } = useTranslation()
+
 	return (
 		<section id="reviews" className="bg-ink py-20 lg:py-28">
 			<h2 className="px-6 text-center font-display text-4xl font-bold tracking-tight text-white sm:text-5xl lg:px-14 lg:text-6xl">
-				Reviews
+				{t("reviews.title")}
 			</h2>
 
 			<div className="mt-12 flex snap-x snap-mandatory gap-1 overflow-x-auto [scrollbar-width:none] lg:mt-16 [&::-webkit-scrollbar]:hidden">
@@ -61,7 +44,7 @@ export default function ReviewSection() {
 					>
 						<img
 							src={review.image}
-							alt={review.alt}
+							alt={t(`reviews.alt.${review.id}`)}
 							className="h-full w-full object-cover"
 						/>
 						<div className="absolute inset-0 bg-black/25" />

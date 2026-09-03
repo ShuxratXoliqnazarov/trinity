@@ -1,19 +1,17 @@
 import { useState } from "react"
+import { useTranslation } from "react-i18next"
 import Button from "../ui/button"
 
 const address = "24 4th St - Al Quoz - Al Quoz Industrial Area 3 - Dubai"
-const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(
-	address,
-)}&z=13&hl=en&iwloc=&output=embed`
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 const emptyRequest = { name: "", email: "", phone: "", message: "" }
 
 const fields = [
-	{ name: "name", placeholder: "Name", type: "text" },
-	{ name: "email", placeholder: "E-mail", type: "email" },
-	{ name: "phone", placeholder: "+7 (999) 999 - 99 - 99", type: "tel" },
+	{ name: "name", type: "text" },
+	{ name: "email", type: "email" },
+	{ name: "phone", type: "tel" },
 ]
 
 function EnvelopeIcon({ className = "" }) {
@@ -29,6 +27,8 @@ const inputBase =
 	"w-full rounded-lg border bg-ink-soft px-5 py-4 text-sm text-white transition-colors placeholder:text-white/35 focus:outline-none"
 
 export default function ContactSection() {
+	const { t, i18n } = useTranslation()
+
 	const [request, setRequest] = useState(emptyRequest)
 	const [errors, setErrors] = useState({})
 	const [requestSent, setRequestSent] = useState(false)
@@ -36,6 +36,10 @@ export default function ContactSection() {
 	const [subscribeEmail, setSubscribeEmail] = useState("")
 	const [subscribeError, setSubscribeError] = useState("")
 	const [subscribed, setSubscribed] = useState(false)
+
+	const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(
+		address,
+	)}&z=13&hl=${i18n.resolvedLanguage}&iwloc=&output=embed`
 
 	function handleChange(event) {
 		const { name, value } = event.target
@@ -47,10 +51,9 @@ export default function ContactSection() {
 	function handleRequestSubmit(event) {
 		event.preventDefault()
 		const nextErrors = {}
-		if (!request.name.trim()) nextErrors.name = "Please enter your name"
-		if (!emailPattern.test(request.email.trim()))
-			nextErrors.email = "Please enter a valid e-mail"
-		if (!request.phone.trim()) nextErrors.phone = "Please enter your phone number"
+		if (!request.name.trim()) nextErrors.name = "name"
+		if (!emailPattern.test(request.email.trim())) nextErrors.email = "email"
+		if (!request.phone.trim()) nextErrors.phone = "phone"
 
 		setErrors(nextErrors)
 		if (Object.keys(nextErrors).length > 0) return
@@ -62,7 +65,7 @@ export default function ContactSection() {
 	function handleSubscribeSubmit(event) {
 		event.preventDefault()
 		if (!emailPattern.test(subscribeEmail.trim())) {
-			setSubscribeError("Please enter a valid e-mail")
+			setSubscribeError("discount.error")
 			return
 		}
 		setSubscribeError("")
@@ -75,7 +78,7 @@ export default function ContactSection() {
 			<div className="mx-auto grid max-w-[1600px] items-center gap-12 px-6 py-20 lg:grid-cols-[1.6fr_1fr] lg:gap-12 lg:py-24 lg:pl-0 lg:pr-20">
 				<iframe
 					src={mapSrc}
-					title={`Trinity office on the map: ${address}`}
+					title={t("contact.mapTitle", { address })}
 					loading="lazy"
 					referrerPolicy="no-referrer-when-downgrade"
 					className="h-[340px] w-full rounded-2xl border-0 sm:h-[420px] lg:h-[460px]"
@@ -83,7 +86,7 @@ export default function ContactSection() {
 
 				<div>
 					<h2 className="font-display text-4xl font-bold tracking-tight text-white lg:text-5xl">
-						Ask us anything
+						{t("contact.title")}
 					</h2>
 
 					<form onSubmit={handleRequestSubmit} noValidate className="mt-8 flex flex-col gap-3">
@@ -94,8 +97,8 @@ export default function ContactSection() {
 									type={field.type}
 									value={request[field.name]}
 									onChange={handleChange}
-									placeholder={field.placeholder}
-									aria-label={field.placeholder}
+									placeholder={t(`contact.fields.${field.name}`)}
+									aria-label={t(`contact.fields.${field.name}`)}
 									className={`${inputBase} ${
 										errors[field.name]
 											? "border-red-500/70"
@@ -103,7 +106,9 @@ export default function ContactSection() {
 									}`}
 								/>
 								{errors[field.name] && (
-									<p className="mt-1 text-[11px] text-red-400">{errors[field.name]}</p>
+									<p className="mt-1 text-[11px] text-red-400">
+										{t(`contact.errors.${errors[field.name]}`)}
+									</p>
 								)}
 							</div>
 						))}
@@ -112,20 +117,18 @@ export default function ContactSection() {
 							name="message"
 							value={request.message}
 							onChange={handleChange}
-							placeholder="Message"
-							aria-label="Message"
+							placeholder={t("contact.fields.message")}
+							aria-label={t("contact.fields.message")}
 							rows={4}
 							className={`${inputBase} resize-none border-line focus:border-accent`}
 						/>
 
 						<div className="mt-3 flex flex-wrap items-center gap-4">
 							<Button type="submit" size="sm">
-								SEND THE REQUEST
+								{t("contact.submit")}
 							</Button>
 							{requestSent && (
-								<p className="text-xs text-accent-bright">
-									Thank you! Your request has been sent.
-								</p>
+								<p className="text-xs text-accent-bright">{t("contact.success")}</p>
 							)}
 						</div>
 					</form>
@@ -165,11 +168,11 @@ export default function ContactSection() {
 
 				<div className="relative mx-auto max-w-xl rounded-2xl border border-white/10 bg-white/[0.04] px-6 py-10 text-center lg:px-14 lg:py-12">
 					<h3 className="font-display text-2xl font-bold text-white lg:text-3xl">
-						Get a discount of up to <span className="text-accent-bright">60%</span>
+						{t("discount.titleStart")}
+						<span className="text-accent-bright">{t("discount.titleAccent")}</span>
 					</h3>
 					<p className="mx-auto mt-4 max-w-md text-xs leading-relaxed text-white/55 lg:text-sm">
-						Get the latest articles and business updates that you need to know, you&apos;ll
-						even get special recommendations weekly.
+						{t("discount.description")}
 					</p>
 
 					<form
@@ -187,23 +190,21 @@ export default function ContactSection() {
 									setSubscribeError("")
 									setSubscribed(false)
 								}}
-								placeholder="Your email"
-								aria-label="Your email"
+								placeholder={t("discount.emailPlaceholder")}
+								aria-label={t("discount.emailPlaceholder")}
 								className="w-full bg-transparent py-3 pl-7 text-sm text-white placeholder:text-white/40 focus:outline-none"
 							/>
 						</div>
 						<Button type="submit" size="sm" className="px-8">
-							RECEIVE
+							{t("discount.submit")}
 						</Button>
 					</form>
 
 					{subscribeError && (
-						<p className="mt-3 text-[11px] text-red-400">{subscribeError}</p>
+						<p className="mt-3 text-[11px] text-red-400">{t(subscribeError)}</p>
 					)}
 					{subscribed && (
-						<p className="mt-3 text-xs text-accent-bright">
-							Thank you! Your discount is on its way.
-						</p>
+						<p className="mt-3 text-xs text-accent-bright">{t("discount.success")}</p>
 					)}
 				</div>
 			</div>

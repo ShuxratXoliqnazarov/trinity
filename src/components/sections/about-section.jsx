@@ -1,32 +1,11 @@
+import { useTranslation } from "react-i18next"
 import aboutUs from "../../assets/images/about-us.png"
 
 const stats = [
-	{
-		value: "8",
-		unit: "year",
-		text: "We've come a long way from a 2-people company to winning at Webby's.",
-	},
-	{
-		value: "72",
-		unit: "cars",
-		text: "We've come a long way from a 2-people company to winning at Webby's.",
-	},
-	{
-		value: "190",
-		unit: "people",
-		text: "We've come a long way from a 2-people company to winning at Webby's.",
-	},
+	{ key: "years", value: "8" },
+	{ key: "cars", value: "72" },
+	{ key: "people", value: "190" },
 ]
-
-const quote = [
-	{ text: "I'm with cars for over 18 years. My auto passion and " },
-	{ text: "attention to details", accent: true },
-	{ text: " will make your experience " },
-	{ text: "with us", accent: true },
-	{ text: " second to none. Guaranteed." },
-]
-
-const author = { name: "Kirill Aliev, MBA", role: "CEO Trinity car rental boutique" }
 
 function QuoteMark({ className = "" }) {
 	return (
@@ -37,6 +16,16 @@ function QuoteMark({ className = "" }) {
 }
 
 export default function AboutSection() {
+	const { t } = useTranslation()
+
+	const quote = [
+		{ text: t("about.quote.part1") },
+		{ text: t("about.quote.accent1"), accent: true },
+		{ text: t("about.quote.part2") },
+		{ text: t("about.quote.accent2"), accent: true },
+		{ text: t("about.quote.part3") },
+	]
+
 	return (
 		<section id="about" className="relative overflow-hidden bg-ink pt-20 lg:pt-28">
 			<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_4%_0%,#152a31_0%,transparent_62%)]" />
@@ -52,12 +41,12 @@ export default function AboutSection() {
 
 			<div className="relative mx-auto max-w-[1400px] px-6 lg:px-14">
 				<h2 className="text-center font-display text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-					About Us
+					{t("about.title")}
 				</h2>
 
 				<div className="mt-14 grid gap-10 sm:grid-cols-3 sm:gap-8 lg:mt-20 lg:gap-16">
 					{stats.map((item) => (
-						<div key={item.unit}>
+						<div key={item.key}>
 							<div className="flex items-baseline gap-2">
 								<span
 									className="font-display text-5xl font-bold leading-none text-transparent lg:text-6xl"
@@ -66,11 +55,11 @@ export default function AboutSection() {
 									{item.value}
 								</span>
 								<span className="font-display text-sm font-medium text-white lg:text-base">
-									{item.unit}
+									{t(`about.stats.${item.key}.unit`)}
 								</span>
 							</div>
 							<p className="mt-4 max-w-[240px] text-xs leading-relaxed text-white/40">
-								{item.text}
+								{t(`about.stats.${item.key}.text`)}
 							</p>
 						</div>
 					))}
@@ -81,9 +70,9 @@ export default function AboutSection() {
 					<QuoteMark className="absolute bottom-0 right-0 h-7 w-10 rotate-180 text-accent/40 lg:h-9 lg:w-12" />
 
 					<p className="text-center font-display text-lg font-bold italic leading-snug text-white sm:text-xl lg:text-2xl">
-						{quote.map((part) => (
+						{quote.map((part, index) => (
 							<span
-								key={part.text}
+								key={`${index}-${part.text}`}
 								className={part.accent ? "text-accent-bright" : undefined}
 							>
 								{part.text}
@@ -93,16 +82,16 @@ export default function AboutSection() {
 
 					<div className="mt-8 text-right lg:mt-10">
 						<p className="font-display text-sm font-bold text-white lg:text-base">
-							{author.name}
+							{t("about.authorName")}
 						</p>
-						<p className="mt-1 text-[11px] text-white/40">{author.role}</p>
+						<p className="mt-1 text-[11px] text-white/40">{t("about.authorRole")}</p>
 					</div>
 				</div>
 			</div>
 
 			<img
 				src={aboutUs}
-				alt="Trinity car rental boutique founder with the fleet"
+				alt={t("about.photoAlt")}
 				className="mt-14 h-[280px] w-full object-cover sm:h-[420px] lg:mt-20 lg:h-[620px]"
 			/>
 		</section>
