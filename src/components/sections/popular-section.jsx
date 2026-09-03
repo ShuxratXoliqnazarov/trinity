@@ -1,4 +1,5 @@
 import { useState } from "react"
+import AudioPlayer from "../ui/audio-player"
 import Button from "../ui/button"
 import { ChevronDown, ChevronUp, SearchIcon } from "../ui/icons"
 
@@ -36,28 +37,32 @@ export default function PopularSection() {
 			className="hidden bg-ink px-6 py-20 lg:block lg:px-14 lg:py-28"
 		>
 			<div className="mx-auto grid max-w-[1400px] gap-10 lg:grid-cols-2 lg:gap-16">
-				<div className="relative min-h-[440px] overflow-hidden rounded-sm bg-ink-card lg:min-h-0">
-					<img
-						src={featured.image}
-						alt={featured.title}
-						onError={hideBroken}
-						className="absolute inset-0 h-full w-full object-cover"
-					/>
-					<div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/10" />
-					<div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-6">
-						<h3 className="max-w-[55%] font-display text-2xl font-medium leading-tight text-white">
-							{featured.title}
-						</h3>
-						<div className="text-right">
-							<p className="text-[11px] uppercase tracking-wide text-white/60">
-								{featured.priceLabel}
-							</p>
-							<p className="font-display text-2xl font-semibold text-white">
-								{featured.price}
-							</p>
-							<p className="text-[11px] text-white/60">{featured.priceUnit}</p>
+				<div className="flex flex-col gap-6">
+					<div className="relative min-h-[440px] flex-1 overflow-hidden rounded-sm bg-ink-card lg:min-h-0">
+						<img
+							src={featured.image}
+							alt={featured.title}
+							onError={hideBroken}
+							className="absolute inset-0 h-full w-full object-cover"
+						/>
+						<div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/10" />
+						<div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-6">
+							<h3 className="max-w-[55%] font-display text-2xl font-medium leading-tight text-white">
+								{featured.title}
+							</h3>
+							<div className="text-right">
+								<p className="text-[11px] uppercase tracking-wide text-white/60">
+									{featured.priceLabel}
+								</p>
+								<p className="font-display text-2xl font-semibold text-white">
+									{featured.price}
+								</p>
+								<p className="text-[11px] text-white/60">{featured.priceUnit}</p>
+							</div>
 						</div>
 					</div>
+
+					<AudioPlayer src="/audio/story.mp3" />
 				</div>
 
 				<div className="flex flex-col">
