@@ -116,5 +116,46 @@
 		"submit": "ПОЛУЧИТЬ",
 		"error": "Пожалуйста, введите корректный e-mail",
 		"success": "Спасибо! Ваша скидка уже в пути."
+	},
+	"footer": {
+		"brands": [
+			"Audi",
+			"BMW",
+			"Rolls-Royce",
+			"Cadillac",
+			"Maserati",
+			"Lamborghini",
+			"Bentley",
+			"Porsche"
+		],
+		"columns": {
+			"customers": {
+				"title": "Клиентам",
+				"items": ["О нас", "Условия", "Отзывы", "Статьи", "Контакты"]
+			},
+			"carList": {
+				"title": "Каталог",
+				"items": ["Внедорожники", "Кабриолеты", "Спорткары", "Премиум", "Купе"]
+			},
+			"carBrand": {
+				"title": "Марки",
+				"items": [
+					"BMW",
+					"Audi",
+					"Ferrari",
+					"Rolls-Royce",
+					"Bentley",
+					"Range Rover",
+					"Lamborghini",
+					"Cadillac"
+				]
+			}
+		},
+		"callback": "ЗАКАЗАТЬ ЗВОНОК",
+		"address": "24 4th St - Al Quoz - Al Quoz Industrial Area 3 - Dubai",
+		"emailPlaceholder": "Ваш e-mail",
+		"submit": "ОТПРАВИТЬ",
+		"privacy": "Политика конфиденциальности",
+		"copyright": "©2023 TRINITY. Все права защищены"
 	}
 }

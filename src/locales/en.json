@@ -116,5 +116,46 @@
 		"submit": "RECEIVE",
 		"error": "Please enter a valid e-mail",
 		"success": "Thank you! Your discount is on its way."
+	},
+	"footer": {
+		"brands": [
+			"Audi",
+			"BMW",
+			"Rolls-Royce",
+			"Cadillac",
+			"Maserati",
+			"Lamborghini",
+			"Bentley",
+			"Porsche"
+		],
+		"columns": {
+			"customers": {
+				"title": "For Customers",
+				"items": ["About Us", "Conditions", "Testimonials", "Articles", "Contacts"]
+			},
+			"carList": {
+				"title": "Car List",
+				"items": ["SUVs", "Convertibles", "Sports Cars", "Premium", "Coupe"]
+			},
+			"carBrand": {
+				"title": "Car brand",
+				"items": [
+					"BMW",
+					"Audi",
+					"Ferrari",
+					"Rolls-Royce",
+					"Bentley",
+					"Range Rover",
+					"Lamborghini",
+					"Cadillac"
+				]
+			}
+		},
+		"callback": "REQUEST A CALLBACK",
+		"address": "24 4th St - Al Quoz - Al Quoz Industrial Area 3 - Dubai",
+		"emailPlaceholder": "Write your E-mail",
+		"submit": "SUBMIT",
+		"privacy": "Privacy Policy",
+		"copyright": "©2023 TRINITY. All rights reserved"
 	}
 }
