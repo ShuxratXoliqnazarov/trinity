@@ -31,7 +31,10 @@ export default function PopularSection() {
 	)
 
 	return (
-		<section id="popular" className="bg-ink px-6 py-20 lg:px-14 lg:py-28">
+		<section
+			id="popular"
+			className="hidden bg-ink px-6 py-20 lg:block lg:px-14 lg:py-28"
+		>
 			<div className="mx-auto grid max-w-[1400px] gap-10 lg:grid-cols-2 lg:gap-16">
 				<div className="relative min-h-[440px] overflow-hidden rounded-sm bg-ink-card lg:min-h-0">
 					<img
