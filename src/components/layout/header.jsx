@@ -14,6 +14,17 @@ const navLinks = [
 	{ label: "Contacts", href: "#contact" },
 ]
 
+const menuLinks = [
+	{ label: "Car List", href: "#fleet" },
+	{ label: "Testimonials", href: "#reviews" },
+	{ label: "Yacht list", href: "#fleet" },
+	{ label: "Articles", href: "#about" },
+	{ label: "Chauffeur", href: "#contact" },
+	{ label: "About Us", href: "#about" },
+	{ label: "Conditions", href: "#contact" },
+	{ label: "Contacts", href: "#contact" },
+]
+
 const cities = ["Dubai", "Moscow", "Budapest", "Wiesbaden"]
 const langs = ["ENG", "RUS"]
 const phone = "+971 58 590 7875"
@@ -126,51 +137,61 @@ export default function Header() {
 			</header>
 
 			<div
-				className={`fixed inset-0 z-50 transition-opacity duration-300 ${
+				className={`fixed inset-0 z-50 flex flex-col bg-ink-soft transition-opacity duration-300 ${
 					menuOpen ? "opacity-100" : "pointer-events-none opacity-0"
 				}`}
 			>
-				<button
-					type="button"
-					aria-label="Close menu"
-					onClick={() => setMenuOpen(false)}
-					className="absolute inset-0 bg-black/70"
-				/>
-				<div
-					className={`absolute right-0 top-0 flex h-full w-80 max-w-[85%] flex-col gap-8 bg-ink-soft px-8 py-8 transition-transform duration-300 ${
-						menuOpen ? "translate-x-0" : "translate-x-full"
-					}`}
-				>
+				<div className="flex items-center justify-between px-6 py-7 lg:px-14">
 					<button
 						type="button"
 						onClick={() => setMenuOpen(false)}
-						className="self-end text-white"
+						className="text-white"
 						aria-label="Close menu"
 					>
-						<CloseIcon className="h-6 w-6" />
+						<CloseIcon className="h-7 w-7" />
 					</button>
-					<nav className="flex flex-col gap-5">
-						{navLinks.map((link) => (
-							<a
-								key={link.href}
-								href={link.href}
-								onClick={() => setMenuOpen(false)}
-								className="text-lg font-medium text-white transition-colors hover:text-accent"
-							>
-								{link.label}
-							</a>
-						))}
-					</nav>
+					<Logo />
+					<Dropdown items={langs} value={lang} onChange={setLang} />
+				</div>
+
+				<nav className="grid flex-1 content-center gap-x-10 gap-y-8 px-8 sm:gap-x-24 lg:mx-auto lg:max-w-3xl grid-cols-2">
+					{menuLinks.map((link, i) => (
+						<a
+							key={`${link.label}-${i}`}
+							href={link.href}
+							onClick={() => setMenuOpen(false)}
+							className="font-display text-2xl font-medium text-white transition-colors hover:text-accent-bright sm:text-3xl"
+						>
+							{link.label}
+						</a>
+					))}
+				</nav>
+
+				<div className="flex items-center gap-5 px-8 py-10">
 					<a
 						href={`tel:${phone.replace(/\s/g, "")}`}
-						className="text-sm font-semibold tracking-wide text-white"
+						className="text-base font-semibold tracking-wide text-white"
 					>
 						{phone}
 					</a>
-					<div className="flex flex-col gap-4">
-						<Dropdown items={cities} value={city} onChange={setCity} />
-						<Dropdown items={langs} value={lang} onChange={setLang} />
-					</div>
+					<a
+						href="https://t.me/"
+						target="_blank"
+						rel="noreferrer"
+						className="flex h-10 w-10 items-center justify-center rounded-full bg-[#2aabee] text-white"
+						aria-label="Telegram"
+					>
+						<TelegramIcon className="h-4 w-4" />
+					</a>
+					<a
+						href="https://wa.me/"
+						target="_blank"
+						rel="noreferrer"
+						className="flex h-10 w-10 items-center justify-center rounded-full bg-[#25d366] text-white"
+						aria-label="WhatsApp"
+					>
+						<WhatsappIcon className="h-4 w-4" />
+					</a>
 				</div>
 			</div>
 
