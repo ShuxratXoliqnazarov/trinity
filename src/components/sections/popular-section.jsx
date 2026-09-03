@@ -50,11 +50,11 @@ export default function PopularSection() {
 							className="absolute inset-0 h-full w-full object-cover"
 						/>
 						<div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/10" />
-						<div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-6">
-							<h3 className="max-w-[55%] font-display text-2xl font-medium leading-tight text-white">
+						<div className="absolute inset-x-0 bottom-0 flex flex-col gap-3 p-6 sm:flex-row sm:items-end sm:justify-between sm:gap-4">
+							<h3 className="font-display text-xl font-medium leading-tight text-white sm:max-w-[55%] sm:text-2xl">
 								{t("popular.featuredTitle")}
 							</h3>
-							<div className="text-right">
+							<div className="shrink-0 sm:text-right">
 								<p className="text-[11px] uppercase tracking-wide text-white/60">
 									{t("popular.priceLabel")}
 								</p>
