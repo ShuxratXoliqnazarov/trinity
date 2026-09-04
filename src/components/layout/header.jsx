@@ -214,26 +214,6 @@ export default function Header() {
 				</div>
 			</div>
 
-			<div className="fixed bottom-6 right-6 z-40 flex flex-col gap-3">
-				<a
-					href="https://t.me/"
-					target="_blank"
-					rel="noreferrer"
-					className="flex h-11 w-11 items-center justify-center rounded-full bg-[#2aabee] text-white transition-transform hover:scale-105"
-					aria-label="Telegram"
-				>
-					<TelegramIcon className="h-5 w-5" />
-				</a>
-				<a
-					href="https://wa.me/"
-					target="_blank"
-					rel="noreferrer"
-					className="flex h-11 w-11 items-center justify-center rounded-full bg-[#25d366] text-white transition-transform hover:scale-105"
-					aria-label="WhatsApp"
-				>
-					<WhatsappIcon className="h-5 w-5" />
-				</a>
-			</div>
 		</>
 	)
 }

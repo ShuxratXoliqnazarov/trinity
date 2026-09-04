@@ -133,23 +133,30 @@
 		"columns": {
 			"customers": {
 				"title": "For Customers",
-				"items": ["About Us", "Conditions", "Testimonials", "Articles", "Contacts"]
+				"items": [
+					"About Us",
+					"Conditions",
+					"Testimonials",
+					"Articles",
+					"Contacts"
+				]
 			},
 			"carList": {
 				"title": "Car List",
-				"items": ["SUVs", "Convertibles", "Sports Cars", "Premium", "Coupe"]
-			},
-			"carBrand": {
-				"title": "Car brand",
 				"items": [
-					"BMW",
-					"Audi",
-					"Ferrari",
-					"Rolls-Royce",
-					"Bentley",
-					"Range Rover",
-					"Lamborghini",
-					"Cadillac"
+					"SUVs",
+					"Convertibles",
+					"Sports Cars",
+					"Premium",
+					"Coupe"
+				]
+			},
+			"service": {
+				"title": "Service",
+				"items": [
+					"Car List",
+					"Yacht list",
+					"Chauffeur"
 				]
 			}
 		},
