@@ -1,16 +1,40 @@
+import { useEffect, useRef } from "react"
 import { useTranslation } from "react-i18next"
 
 export default function HeroSection() {
 	const { t } = useTranslation()
+	const videoRef = useRef(null)
+
+	useEffect(() => {
+		if (window.matchMedia("(hover: none)").matches) {
+			videoRef.current?.play().catch(() => {})
+		}
+	}, [])
+
+	function playVideo() {
+		videoRef.current?.play().catch(() => {})
+	}
+
+	function pauseVideo() {
+		const video = videoRef.current
+		if (!video) return
+		video.pause()
+		video.currentTime = 0
+	}
 
 	return (
-		<section className="group relative flex min-h-[100svh] items-center justify-center overflow-hidden bg-ink">
+		<section
+			onMouseEnter={playVideo}
+			onMouseLeave={pauseVideo}
+			className="group relative flex min-h-[100svh] items-center justify-center overflow-hidden bg-ink"
+		>
 			<div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_55%,#20232a_0%,#0c0c0e_70%)]" />
 			<video
-				autoPlay
+				ref={videoRef}
 				loop
 				muted
 				playsInline
+				preload="auto"
 				poster="/hero-car.jpg"
 				className="absolute inset-0 h-full w-full scale-[1.08] object-cover object-[50%_40%] transition-transform duration-[1200ms] ease-out group-hover:scale-[1.13]"
 			>
