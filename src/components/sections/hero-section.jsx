@@ -15,6 +15,13 @@ export default function HeroSection() {
 				className="absolute inset-0 h-full w-full object-cover object-[50%_42%] transition-transform duration-[1200ms] ease-out group-hover:scale-[1.04]"
 			/>
 
+			<div className="pointer-events-none absolute inset-0 overflow-hidden mix-blend-screen">
+				<span className="smoke-a absolute -left-1/4 bottom-[-8%] h-[70%] w-[85%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(170,180,200,0.85),transparent_62%)] blur-3xl" />
+				<span className="smoke-b absolute -right-1/4 bottom-[2%] h-[65%] w-[80%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(140,155,185,0.8),transparent_62%)] blur-3xl" />
+				<span className="smoke-a absolute left-[15%] top-[20%] h-[55%] w-[65%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(160,170,195,0.55),transparent_60%)] blur-3xl [animation-delay:-11s] [animation-duration:36s]" />
+				<span className="smoke-b absolute right-[10%] top-[10%] h-[50%] w-[55%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(150,160,185,0.5),transparent_60%)] blur-3xl [animation-delay:-18s] [animation-duration:44s]" />
+			</div>
+
 			<div className="absolute inset-0 bg-black/45" />
 			<div className="absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_50%_48%,rgba(0,0,0,0.55),transparent_70%)]" />
 			<div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-ink" />
