@@ -82,16 +82,80 @@ export default function HeroSection() {
 			<div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-ink" />
 			<div className="absolute right-0 top-0 h-36 w-[34rem] bg-[linear-gradient(to_left,rgba(9,9,11,1)_0%,rgba(9,9,11,1)_38%,transparent_100%)]" />
 
+			<svg className="absolute h-0 w-0" aria-hidden="true">
+				<defs>
+					<filter id="hero-smoke-1" x="-30%" y="-30%" width="160%" height="160%">
+						<feTurbulence
+							type="fractalNoise"
+							baseFrequency="0.012 0.03"
+							numOctaves="4"
+							seed="7"
+							stitchTiles="stitch"
+							result="noise"
+						>
+							<animate
+								attributeName="baseFrequency"
+								values="0.010 0.026;0.016 0.034;0.010 0.026"
+								dur="14s"
+								repeatCount="indefinite"
+							/>
+						</feTurbulence>
+						<feColorMatrix
+							in="noise"
+							type="matrix"
+							values="0 0 0 0 0.78  0 0 0 0 0.83  0 0 0 0 0.9  0.5 0.5 0.5 0 -0.55"
+						/>
+						<feComponentTransfer>
+							<feFuncA type="gamma" amplitude="1.6" exponent="2.6" offset="0" />
+						</feComponentTransfer>
+					</filter>
+					<filter id="hero-smoke-2" x="-30%" y="-30%" width="160%" height="160%">
+						<feTurbulence
+							type="fractalNoise"
+							baseFrequency="0.02 0.045"
+							numOctaves="4"
+							seed="23"
+							stitchTiles="stitch"
+							result="noise"
+						>
+							<animate
+								attributeName="baseFrequency"
+								values="0.018 0.04;0.026 0.05;0.018 0.04"
+								dur="17s"
+								repeatCount="indefinite"
+							/>
+						</feTurbulence>
+						<feColorMatrix
+							in="noise"
+							type="matrix"
+							values="0 0 0 0 0.7  0 0 0 0 0.78  0 0 0 0 0.88  0.5 0.5 0.5 0 -0.55"
+						/>
+						<feComponentTransfer>
+							<feFuncA type="gamma" amplitude="1.5" exponent="2.8" offset="0" />
+						</feComponentTransfer>
+					</filter>
+				</defs>
+			</svg>
+
 			<div
 				className={`pointer-events-none absolute inset-0 overflow-hidden mix-blend-screen transition-opacity duration-1000 ease-out group-hover:opacity-100 ${
-					alwaysOn ? "opacity-80" : "opacity-65"
+					alwaysOn ? "opacity-90" : "opacity-70"
 				}`}
+				style={{
+					maskImage:
+						"radial-gradient(ellipse 65% 60% at 50% 55%, black 40%, transparent 92%)",
+					WebkitMaskImage:
+						"radial-gradient(ellipse 65% 60% at 50% 55%, black 40%, transparent 92%)",
+				}}
 			>
-				<span className="smoke-a absolute -left-1/3 bottom-[-12%] h-[85%] w-[90%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(180,190,210,0.65),transparent_62%)] blur-3xl [animation-duration:8s]" />
-				<span className="smoke-b absolute -right-1/3 bottom-[-4%] h-[80%] w-[85%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(155,170,200,0.6),transparent_62%)] blur-3xl [animation-duration:10s]" />
-				<span className="smoke-a absolute left-[10%] top-[18%] h-[65%] w-[72%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(170,180,205,0.5),transparent_60%)] blur-3xl [animation-delay:-4s] [animation-duration:13s]" />
-				<span className="smoke-b absolute right-[6%] top-[8%] h-[55%] w-[60%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(160,170,200,0.45),transparent_60%)] blur-3xl [animation-delay:-6s] [animation-duration:15s]" />
-				<span className="smoke-a absolute bottom-[8%] left-1/2 h-[45%] w-[80%] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(175,185,210,0.55),transparent_58%)] blur-3xl [animation-delay:-9s] [animation-duration:12s]" />
+				<span
+					className="smoke-a absolute -inset-x-1/4 -inset-y-1/4 bg-black"
+					style={{ filter: "url(#hero-smoke-1)" }}
+				/>
+				<span
+					className="smoke-b absolute -inset-x-1/4 -inset-y-1/4 bg-black"
+					style={{ filter: "url(#hero-smoke-2)" }}
+				/>
 			</div>
 
 			<div className="relative z-10 flex flex-col items-center px-6 text-center">
