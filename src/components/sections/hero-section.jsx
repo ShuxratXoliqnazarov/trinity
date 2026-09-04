@@ -83,8 +83,8 @@ export default function HeroSection() {
 			<div className="absolute right-0 top-0 h-36 w-[34rem] bg-[linear-gradient(to_left,rgba(9,9,11,1)_0%,rgba(9,9,11,1)_38%,transparent_100%)]" />
 
 			<div
-				className={`pointer-events-none absolute inset-0 overflow-hidden mix-blend-screen transition-opacity duration-1000 ease-out group-hover:opacity-95 ${
-					alwaysOn ? "opacity-60" : "opacity-45"
+				className={`pointer-events-none absolute inset-0 overflow-hidden mix-blend-screen transition-opacity duration-1000 ease-out group-hover:opacity-100 ${
+					alwaysOn ? "opacity-80" : "opacity-65"
 				}`}
 			>
 				<span className="smoke-a absolute -left-1/3 bottom-[-12%] h-[85%] w-[90%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(175,185,205,0.55),transparent_62%)] blur-3xl" />
