@@ -86,7 +86,7 @@ export default function HeroSection() {
 
 			<div
 				className={`pointer-events-none absolute inset-0 overflow-hidden mix-blend-screen transition-opacity duration-1000 ease-out group-hover:opacity-75 ${
-					alwaysOn ? "opacity-75" : "opacity-30"
+					alwaysOn ? "opacity-45" : "opacity-30"
 				}`}
 			>
 				<span className="smoke-a absolute -left-1/4 bottom-[-10%] h-[70%] w-[80%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(170,180,200,0.4),transparent_62%)] blur-3xl" />
@@ -96,12 +96,12 @@ export default function HeroSection() {
 
 			<div
 				className={`pointer-events-none absolute inset-0 mix-blend-screen transition-opacity delay-200 duration-500 ease-out group-hover:opacity-100 ${
-					alwaysOn ? "opacity-100" : "opacity-0"
+					alwaysOn ? "opacity-55" : "opacity-0"
 				}`}
 			>
-				<span className="absolute left-[31%] top-[51%] h-28 w-36 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(205,225,255,1),rgba(130,180,255,0.4)_45%,transparent_72%)] blur-lg sm:h-36 sm:w-48" />
-				<span className="absolute left-[69%] top-[51%] h-28 w-36 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(205,225,255,1),rgba(130,180,255,0.4)_45%,transparent_72%)] blur-lg sm:h-36 sm:w-48" />
-				<span className="absolute left-1/2 top-[76%] h-28 w-[62%] -translate-x-1/2 -translate-y-1/2 rounded-[50%] bg-[radial-gradient(ellipse,rgba(140,175,235,0.55),transparent_70%)] blur-2xl" />
+				<span className="absolute left-[20%] top-[41%] h-20 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(205,225,255,1),rgba(130,180,255,0.4)_45%,transparent_72%)] blur-lg sm:left-[31%] sm:top-[51%] sm:h-36 sm:w-48" />
+				<span className="absolute left-[80%] top-[41%] h-20 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(205,225,255,1),rgba(130,180,255,0.4)_45%,transparent_72%)] blur-lg sm:left-[69%] sm:top-[51%] sm:h-36 sm:w-48" />
+				<span className="absolute left-1/2 top-[70%] h-24 w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-[50%] bg-[radial-gradient(ellipse,rgba(140,175,235,0.5),transparent_70%)] blur-2xl sm:top-[76%] sm:w-[62%]" />
 			</div>
 
 			<div className="relative z-10 flex flex-col items-center px-6 text-center">
