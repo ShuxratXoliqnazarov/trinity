@@ -71,18 +71,16 @@ export default function HeroSection() {
 				muted
 				playsInline
 				preload="auto"
-				poster="/hero-car.jpg"
-				className={`absolute inset-0 h-full w-full object-cover object-[50%_38%] transition-transform duration-[1200ms] ease-out group-hover:scale-[1.06] ${
-					alwaysOn ? "scale-100" : "scale-[1.03]"
-				}`}
+				poster="/hero-lambo-poster.jpg"
+				className="absolute inset-0 h-full w-full scale-[1.04] object-cover object-[50%_52%] transition-transform duration-[1200ms] ease-out group-hover:scale-[1.08]"
 			>
-				<source src="/hero-car.mp4" type="video/mp4" />
+				<source src="/hero-lambo.mp4" type="video/mp4" />
 			</video>
 
-			<div className="absolute inset-0 bg-black/40" />
-			<div className="absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_50%_48%,rgba(0,0,0,0.5),transparent_70%)]" />
-			<div className="absolute inset-0 bg-gradient-to-b from-black/55 via-transparent to-ink" />
-			<div className="absolute bottom-0 right-0 h-56 w-80 bg-[radial-gradient(ellipse_at_bottom_right,rgba(12,12,14,0.98),transparent_72%)]" />
+			<div className="absolute inset-0 bg-black/35" />
+			<div className="absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_50%_48%,rgba(0,0,0,0.45),transparent_70%)]" />
+			<div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-ink" />
+			<div className="absolute right-0 top-0 h-32 w-[28rem] bg-[linear-gradient(to_left,rgba(10,10,12,1)_0%,rgba(10,10,12,0.9)_25%,transparent_100%)]" />
 
 			<div
 				className={`pointer-events-none absolute inset-0 overflow-hidden mix-blend-screen transition-opacity duration-1000 ease-out group-hover:opacity-75 ${
@@ -92,16 +90,6 @@ export default function HeroSection() {
 				<span className="smoke-a absolute -left-1/4 bottom-[-10%] h-[70%] w-[80%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(170,180,200,0.4),transparent_62%)] blur-3xl" />
 				<span className="smoke-b absolute -right-1/4 bottom-0 h-[65%] w-[75%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(140,155,185,0.38),transparent_62%)] blur-3xl" />
 				<span className="smoke-a absolute left-[15%] top-[25%] h-[50%] w-[60%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(160,170,195,0.28),transparent_60%)] blur-3xl [animation-delay:-11s] [animation-duration:36s]" />
-			</div>
-
-			<div
-				className={`pointer-events-none absolute inset-0 mix-blend-screen transition-opacity delay-200 duration-500 ease-out group-hover:opacity-100 ${
-					alwaysOn ? "opacity-55" : "opacity-0"
-				}`}
-			>
-				<span className="absolute left-[20%] top-[41%] h-20 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(205,225,255,1),rgba(130,180,255,0.4)_45%,transparent_72%)] blur-lg sm:left-[31%] sm:top-[51%] sm:h-36 sm:w-48" />
-				<span className="absolute left-[80%] top-[41%] h-20 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(205,225,255,1),rgba(130,180,255,0.4)_45%,transparent_72%)] blur-lg sm:left-[69%] sm:top-[51%] sm:h-36 sm:w-48" />
-				<span className="absolute left-1/2 top-[70%] h-24 w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-[50%] bg-[radial-gradient(ellipse,rgba(140,175,235,0.5),transparent_70%)] blur-2xl sm:top-[76%] sm:w-[62%]" />
 			</div>
 
 			<div className="relative z-10 flex flex-col items-center px-6 text-center">
