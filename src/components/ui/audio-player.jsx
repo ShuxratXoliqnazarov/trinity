@@ -89,15 +89,15 @@ export default function AudioPlayer({ src, label = "Listen to our story", classN
 				type="button"
 				onClick={seek}
 				aria-label={label}
-				className="flex h-10 flex-1 items-center gap-[3px]"
+				className="flex h-10 min-w-0 flex-1 items-center gap-[2px]"
 			>
 				{bars.map((h, i) => (
 					<span
 						key={i}
-						className={`w-[3px] rounded-full transition-colors ${
+						className={`h-full min-w-0 flex-1 rounded-full transition-colors ${
 							i < activeBar ? "bg-accent-bright" : "bg-white/25"
 						}`}
-						style={{ height: `${h}%` }}
+						style={{ maxHeight: `${h}%` }}
 					/>
 				))}
 			</button>
