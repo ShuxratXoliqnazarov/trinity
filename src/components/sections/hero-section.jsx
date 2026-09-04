@@ -72,8 +72,8 @@ export default function HeroSection() {
 				playsInline
 				preload="auto"
 				poster="/hero-car.jpg"
-				className={`absolute inset-0 h-full w-full object-cover object-[50%_40%] transition-transform duration-[1200ms] ease-out group-hover:scale-[1.13] ${
-					alwaysOn ? "scale-[1.13]" : "scale-[1.08]"
+				className={`absolute inset-0 h-full w-full object-cover object-[50%_38%] transition-transform duration-[1200ms] ease-out group-hover:scale-[1.06] ${
+					alwaysOn ? "scale-100" : "scale-[1.03]"
 				}`}
 			>
 				<source src="/hero-car.mp4" type="video/mp4" />
@@ -82,7 +82,7 @@ export default function HeroSection() {
 			<div className="absolute inset-0 bg-black/40" />
 			<div className="absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_50%_48%,rgba(0,0,0,0.5),transparent_70%)]" />
 			<div className="absolute inset-0 bg-gradient-to-b from-black/55 via-transparent to-ink" />
-			<div className="absolute bottom-0 right-0 h-40 w-64 bg-[radial-gradient(ellipse_at_bottom_right,rgba(12,12,14,0.95),transparent_70%)]" />
+			<div className="absolute bottom-0 right-0 h-56 w-80 bg-[radial-gradient(ellipse_at_bottom_right,rgba(12,12,14,0.98),transparent_72%)]" />
 
 			<div
 				className={`pointer-events-none absolute inset-0 overflow-hidden mix-blend-screen transition-opacity duration-1000 ease-out group-hover:opacity-75 ${
