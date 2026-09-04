@@ -4,34 +4,65 @@ import { useTranslation } from "react-i18next"
 export default function HeroSection() {
 	const { t } = useTranslation()
 	const videoRef = useRef(null)
+	const rafRef = useRef(0)
 
-	useEffect(() => {
-		if (window.matchMedia("(hover: none)").matches) {
-			videoRef.current?.play().catch(() => {})
-		}
-	}, [])
-
-	function playVideo() {
-		videoRef.current?.play().catch(() => {})
-	}
-
-	function pauseVideo() {
+	function reverseStep() {
 		const video = videoRef.current
 		if (!video) return
+		const next = video.currentTime - 1 / 50
+		if (next <= 0) {
+			video.currentTime = 0
+			video.play().catch(() => {})
+			return
+		}
+		video.currentTime = next
+		rafRef.current = requestAnimationFrame(reverseStep)
+	}
+
+	function startPlaying() {
+		const video = videoRef.current
+		if (!video) return
+		cancelAnimationFrame(rafRef.current)
+		video.play().catch(() => {})
+	}
+
+	function stopPlaying() {
+		const video = videoRef.current
+		if (!video) return
+		cancelAnimationFrame(rafRef.current)
 		video.pause()
 		video.currentTime = 0
 	}
 
+	useEffect(() => {
+		const video = videoRef.current
+		if (!video) return
+
+		function onEnded() {
+			cancelAnimationFrame(rafRef.current)
+			rafRef.current = requestAnimationFrame(reverseStep)
+		}
+		video.addEventListener("ended", onEnded)
+
+		if (window.matchMedia("(hover: none)").matches) {
+			video.play().catch(() => {})
+		}
+
+		return () => {
+			video.removeEventListener("ended", onEnded)
+			cancelAnimationFrame(rafRef.current)
+		}
+	}, [])
+
 	return (
 		<section
-			onMouseEnter={playVideo}
-			onMouseLeave={pauseVideo}
+			onMouseEnter={startPlaying}
+			onMouseLeave={stopPlaying}
 			className="group relative flex min-h-[100svh] items-center justify-center overflow-hidden bg-ink"
 		>
 			<div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_55%,#20232a_0%,#0c0c0e_70%)]" />
 			<video
 				ref={videoRef}
-				loop
 				muted
 				playsInline
 				preload="auto"
