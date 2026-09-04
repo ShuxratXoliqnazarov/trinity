@@ -87,11 +87,11 @@ export default function HeroSection() {
 					alwaysOn ? "opacity-80" : "opacity-65"
 				}`}
 			>
-				<span className="smoke-a absolute -left-1/3 bottom-[-12%] h-[85%] w-[90%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(175,185,205,0.55),transparent_62%)] blur-3xl" />
-				<span className="smoke-b absolute -right-1/3 bottom-[-4%] h-[80%] w-[85%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(150,165,195,0.5),transparent_62%)] blur-3xl" />
-				<span className="smoke-a absolute left-[10%] top-[18%] h-[65%] w-[72%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(165,175,200,0.4),transparent_60%)] blur-3xl [animation-delay:-11s] [animation-duration:36s]" />
-				<span className="smoke-b absolute right-[6%] top-[8%] h-[55%] w-[60%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(155,165,195,0.35),transparent_60%)] blur-3xl [animation-delay:-22s] [animation-duration:46s]" />
-				<span className="smoke-a absolute bottom-[8%] left-1/2 h-[45%] w-[80%] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(170,180,205,0.45),transparent_58%)] blur-3xl [animation-delay:-30s] [animation-duration:40s]" />
+				<span className="smoke-a absolute -left-1/3 bottom-[-12%] h-[85%] w-[90%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(180,190,210,0.65),transparent_62%)] blur-3xl [animation-duration:8s]" />
+				<span className="smoke-b absolute -right-1/3 bottom-[-4%] h-[80%] w-[85%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(155,170,200,0.6),transparent_62%)] blur-3xl [animation-duration:10s]" />
+				<span className="smoke-a absolute left-[10%] top-[18%] h-[65%] w-[72%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(170,180,205,0.5),transparent_60%)] blur-3xl [animation-delay:-4s] [animation-duration:13s]" />
+				<span className="smoke-b absolute right-[6%] top-[8%] h-[55%] w-[60%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(160,170,200,0.45),transparent_60%)] blur-3xl [animation-delay:-6s] [animation-duration:15s]" />
+				<span className="smoke-a absolute bottom-[8%] left-1/2 h-[45%] w-[80%] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(175,185,210,0.55),transparent_58%)] blur-3xl [animation-delay:-9s] [animation-duration:12s]" />
 			</div>
 
 			<div className="relative z-10 flex flex-col items-center px-6 text-center">
