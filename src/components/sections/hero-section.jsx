@@ -77,7 +77,7 @@ export default function HeroSection() {
 			<div className="absolute inset-0 bg-gradient-to-b from-black/55 via-transparent to-ink" />
 			<div className="absolute bottom-0 right-0 h-40 w-64 bg-[radial-gradient(ellipse_at_bottom_right,rgba(12,12,14,0.95),transparent_70%)]" />
 
-			<div className="pointer-events-none absolute inset-0 overflow-hidden opacity-0 mix-blend-screen transition-opacity duration-1000 ease-out group-hover:opacity-70">
+			<div className="pointer-events-none absolute inset-0 overflow-hidden opacity-30 mix-blend-screen transition-opacity duration-1000 ease-out group-hover:opacity-75">
 				<span className="smoke-a absolute -left-1/4 bottom-[-10%] h-[70%] w-[80%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(170,180,200,0.4),transparent_62%)] blur-3xl" />
 				<span className="smoke-b absolute -right-1/4 bottom-0 h-[65%] w-[75%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(140,155,185,0.38),transparent_62%)] blur-3xl" />
 				<span className="smoke-a absolute left-[15%] top-[25%] h-[50%] w-[60%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(160,170,195,0.28),transparent_60%)] blur-3xl [animation-delay:-11s] [animation-duration:36s]" />
