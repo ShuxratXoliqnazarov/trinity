@@ -30,13 +30,17 @@ const socials = [
 	{ Icon: InstagramIcon, href: "https://instagram.com", label: "Instagram" },
 ]
 
-function LinkColumn({ title, items }) {
+function LinkColumn({ title, items, twoCol = false }) {
 	return (
 		<div>
 			<h3 className="text-xs font-semibold uppercase tracking-[0.12em] text-white/50">
 				{title}
 			</h3>
-			<ul className="mt-5 space-y-3">
+			<ul
+				className={`mt-5 gap-x-6 gap-y-3 ${
+					twoCol ? "grid grid-cols-2" : "flex flex-col"
+				}`}
+			>
 				{items.map((label) => (
 					<li key={label}>
 						<a
@@ -77,19 +81,24 @@ export default function Footer() {
 					))}
 				</ul>
 
-				<div className="grid gap-10 py-12 md:grid-cols-2 lg:grid-cols-[repeat(3,auto)_1fr] lg:gap-16">
-					<LinkColumn
-						title={columns.customers.title}
-						items={columns.customers.items}
-					/>
-					<LinkColumn
-						title={columns.carList.title}
-						items={columns.carList.items}
-					/>
-					<LinkColumn
-						title={columns.carBrand.title}
-						items={columns.carBrand.items}
-					/>
+				<div className="grid gap-10 py-12 lg:grid-cols-[repeat(3,auto)_1fr] lg:gap-16">
+					<div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:contents">
+						<LinkColumn
+							title={columns.customers.title}
+							items={columns.customers.items}
+						/>
+						<LinkColumn
+							title={columns.carList.title}
+							items={columns.carList.items}
+						/>
+						<div className="col-span-2 sm:col-span-1">
+							<LinkColumn
+								title={columns.carBrand.title}
+								items={columns.carBrand.items}
+								twoCol
+							/>
+						</div>
+					</div>
 
 					<div className="flex flex-col gap-5">
 						<div className="flex items-center gap-3">
@@ -129,7 +138,7 @@ export default function Footer() {
 
 						<form
 							onSubmit={(e) => e.preventDefault()}
-							className="flex overflow-hidden rounded-lg border border-line bg-ink-card"
+							className="flex flex-col overflow-hidden rounded-lg border border-line bg-ink-card sm:flex-row"
 						>
 							<input
 								type="email"
@@ -140,7 +149,7 @@ export default function Footer() {
 							/>
 							<button
 								type="submit"
-								className="bg-accent px-5 text-xs font-semibold uppercase tracking-wide text-white transition-colors hover:bg-accent-bright"
+								className="shrink-0 bg-accent px-5 py-3 text-xs font-semibold uppercase tracking-wide text-white transition-colors hover:bg-accent-bright"
 							>
 								{t("footer.submit")}
 							</button>
