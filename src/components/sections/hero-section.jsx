@@ -143,9 +143,9 @@ export default function HeroSection() {
 				}`}
 				style={{
 					maskImage:
-						"radial-gradient(ellipse 65% 60% at 50% 55%, black 40%, transparent 92%)",
+						"radial-gradient(ellipse 50% 55% at 50% 68%, black 25%, transparent 88%)",
 					WebkitMaskImage:
-						"radial-gradient(ellipse 65% 60% at 50% 55%, black 40%, transparent 92%)",
+						"radial-gradient(ellipse 50% 55% at 50% 68%, black 25%, transparent 88%)",
 				}}
 			>
 				<span
@@ -153,8 +153,16 @@ export default function HeroSection() {
 					style={{ filter: "url(#hero-smoke-1)" }}
 				/>
 				<span
-					className="smoke-b absolute -inset-x-1/4 -inset-y-1/4 bg-black"
+					className="smoke-b absolute -inset-x-1/4 -inset-y-1/4 bg-black [animation-delay:-6.5s]"
 					style={{ filter: "url(#hero-smoke-2)" }}
+				/>
+				<span
+					className="smoke-a absolute -inset-x-1/4 -inset-y-1/4 bg-black [animation-delay:-5.5s]"
+					style={{ filter: "url(#hero-smoke-2)" }}
+				/>
+				<span
+					className="smoke-b absolute -inset-x-1/4 -inset-y-1/4 bg-black [animation-delay:-11s]"
+					style={{ filter: "url(#hero-smoke-1)" }}
 				/>
 			</div>
 
