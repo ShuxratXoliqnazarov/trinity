@@ -84,22 +84,21 @@ export default function HeroSection() {
 
 			<svg className="absolute h-0 w-0" aria-hidden="true">
 				<defs>
-					<filter id="hero-smoke-1" x="-30%" y="-30%" width="160%" height="160%">
+					<filter
+						id="hero-smoke-1"
+						x="-15%"
+						y="-15%"
+						width="130%"
+						height="130%"
+					>
 						<feTurbulence
 							type="fractalNoise"
-							baseFrequency="0.012 0.03"
-							numOctaves="4"
+							baseFrequency="0.014 0.032"
+							numOctaves="2"
 							seed="7"
 							stitchTiles="stitch"
 							result="noise"
-						>
-							<animate
-								attributeName="baseFrequency"
-								values="0.010 0.026;0.016 0.034;0.010 0.026"
-								dur="14s"
-								repeatCount="indefinite"
-							/>
-						</feTurbulence>
+						/>
 						<feColorMatrix
 							in="noise"
 							type="matrix"
@@ -109,22 +108,21 @@ export default function HeroSection() {
 							<feFuncA type="gamma" amplitude="1.6" exponent="2.6" offset="0" />
 						</feComponentTransfer>
 					</filter>
-					<filter id="hero-smoke-2" x="-30%" y="-30%" width="160%" height="160%">
+					<filter
+						id="hero-smoke-2"
+						x="-15%"
+						y="-15%"
+						width="130%"
+						height="130%"
+					>
 						<feTurbulence
 							type="fractalNoise"
-							baseFrequency="0.02 0.045"
-							numOctaves="4"
+							baseFrequency="0.022 0.048"
+							numOctaves="2"
 							seed="23"
 							stitchTiles="stitch"
 							result="noise"
-						>
-							<animate
-								attributeName="baseFrequency"
-								values="0.018 0.04;0.026 0.05;0.018 0.04"
-								dur="17s"
-								repeatCount="indefinite"
-							/>
-						</feTurbulence>
+						/>
 						<feColorMatrix
 							in="noise"
 							type="matrix"
@@ -149,20 +147,12 @@ export default function HeroSection() {
 				}}
 			>
 				<span
-					className="smoke-a absolute -inset-x-1/4 -inset-y-1/4 bg-black"
+					className="smoke-a absolute -inset-x-1/4 -inset-y-1/4 bg-black will-change-transform"
 					style={{ filter: "url(#hero-smoke-1)" }}
 				/>
 				<span
-					className="smoke-b absolute -inset-x-1/4 -inset-y-1/4 bg-black [animation-delay:-6.5s]"
+					className="smoke-b absolute -inset-x-1/4 -inset-y-1/4 bg-black will-change-transform [animation-delay:-6.5s]"
 					style={{ filter: "url(#hero-smoke-2)" }}
-				/>
-				<span
-					className="smoke-a absolute -inset-x-1/4 -inset-y-1/4 bg-black [animation-delay:-5.5s]"
-					style={{ filter: "url(#hero-smoke-2)" }}
-				/>
-				<span
-					className="smoke-b absolute -inset-x-1/4 -inset-y-1/4 bg-black [animation-delay:-11s]"
-					style={{ filter: "url(#hero-smoke-1)" }}
 				/>
 			</div>
 
