@@ -22,7 +22,13 @@ export default function HeroSection() {
 			<div className="absolute inset-0 bg-gradient-to-b from-black/55 via-transparent to-ink" />
 			<div className="absolute bottom-0 right-0 h-40 w-64 bg-[radial-gradient(ellipse_at_bottom_right,rgba(12,12,14,0.95),transparent_70%)]" />
 
-			<div className="pointer-events-none absolute inset-0 opacity-0 mix-blend-screen transition-opacity duration-500 ease-out group-hover:opacity-100">
+			<div className="pointer-events-none absolute inset-0 overflow-hidden opacity-0 mix-blend-screen transition-opacity duration-1000 ease-out group-hover:opacity-70">
+				<span className="smoke-a absolute -left-1/4 bottom-[-10%] h-[70%] w-[80%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(170,180,200,0.4),transparent_62%)] blur-3xl" />
+				<span className="smoke-b absolute -right-1/4 bottom-0 h-[65%] w-[75%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(140,155,185,0.38),transparent_62%)] blur-3xl" />
+				<span className="smoke-a absolute left-[15%] top-[25%] h-[50%] w-[60%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(160,170,195,0.28),transparent_60%)] blur-3xl [animation-delay:-11s] [animation-duration:36s]" />
+			</div>
+
+			<div className="pointer-events-none absolute inset-0 opacity-0 mix-blend-screen transition-opacity delay-200 duration-500 ease-out group-hover:opacity-100">
 				<span className="absolute left-[31%] top-[51%] h-28 w-36 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(205,225,255,1),rgba(130,180,255,0.4)_45%,transparent_72%)] blur-lg sm:h-36 sm:w-48" />
 				<span className="absolute left-[69%] top-[51%] h-28 w-36 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(205,225,255,1),rgba(130,180,255,0.4)_45%,transparent_72%)] blur-lg sm:h-36 sm:w-48" />
 				<span className="absolute left-1/2 top-[76%] h-28 w-[62%] -translate-x-1/2 -translate-y-1/2 rounded-[50%] bg-[radial-gradient(ellipse,rgba(140,175,235,0.55),transparent_70%)] blur-2xl" />

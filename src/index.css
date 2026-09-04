@@ -27,3 +27,38 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
+@keyframes smoke-drift-a {
+	0%,
+	100% {
+		transform: translate3d(-16%, 5%, 0) scale(1);
+	}
+	50% {
+		transform: translate3d(15%, -7%, 0) scale(1.4);
+	}
+}
+
+@keyframes smoke-drift-b {
+	0%,
+	100% {
+		transform: translate3d(18%, -3%, 0) scale(1.1);
+	}
+	50% {
+		transform: translate3d(-14%, 7%, 0) scale(1.45);
+	}
+}
+
+.smoke-a {
+	animation: smoke-drift-a 22s ease-in-out infinite;
+}
+
+.smoke-b {
+	animation: smoke-drift-b 30s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.smoke-a,
+	.smoke-b {
+		animation: none;
+	}
+}
+
