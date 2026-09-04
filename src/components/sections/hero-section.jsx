@@ -6,25 +6,21 @@ export default function HeroSection() {
 	return (
 		<section className="group relative flex min-h-[100svh] items-center justify-center overflow-hidden bg-ink">
 			<div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_55%,#20232a_0%,#0c0c0e_70%)]" />
-			<img
-				src="/hero-car.jpg"
-				alt=""
-				onError={(e) => {
-					e.currentTarget.style.display = "none"
-				}}
-				className="absolute inset-0 h-full w-full object-cover object-[50%_42%] transition-transform duration-[1200ms] ease-out group-hover:scale-[1.04]"
-			/>
+			<video
+				autoPlay
+				loop
+				muted
+				playsInline
+				poster="/hero-car.jpg"
+				className="absolute inset-0 h-full w-full scale-[1.08] object-cover object-[50%_40%] transition-transform duration-[1200ms] ease-out group-hover:scale-[1.13]"
+			>
+				<source src="/hero-car.mp4" type="video/mp4" />
+			</video>
 
-			<div className="pointer-events-none absolute inset-0 overflow-hidden mix-blend-screen">
-				<span className="smoke-a absolute -left-1/4 bottom-[-8%] h-[70%] w-[85%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(170,180,200,0.85),transparent_62%)] blur-3xl" />
-				<span className="smoke-b absolute -right-1/4 bottom-[2%] h-[65%] w-[80%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(140,155,185,0.8),transparent_62%)] blur-3xl" />
-				<span className="smoke-a absolute left-[15%] top-[20%] h-[55%] w-[65%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(160,170,195,0.55),transparent_60%)] blur-3xl [animation-delay:-11s] [animation-duration:36s]" />
-				<span className="smoke-b absolute right-[10%] top-[10%] h-[50%] w-[55%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(150,160,185,0.5),transparent_60%)] blur-3xl [animation-delay:-18s] [animation-duration:44s]" />
-			</div>
-
-			<div className="absolute inset-0 bg-black/45" />
-			<div className="absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_50%_48%,rgba(0,0,0,0.55),transparent_70%)]" />
-			<div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-ink" />
+			<div className="absolute inset-0 bg-black/40" />
+			<div className="absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_50%_48%,rgba(0,0,0,0.5),transparent_70%)]" />
+			<div className="absolute inset-0 bg-gradient-to-b from-black/55 via-transparent to-ink" />
+			<div className="absolute bottom-0 right-0 h-40 w-64 bg-[radial-gradient(ellipse_at_bottom_right,rgba(12,12,14,0.95),transparent_70%)]" />
 
 			<div className="pointer-events-none absolute inset-0 opacity-0 mix-blend-screen transition-opacity duration-500 ease-out group-hover:opacity-100">
 				<span className="absolute left-[31%] top-[51%] h-28 w-36 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(205,225,255,1),rgba(130,180,255,0.4)_45%,transparent_72%)] blur-lg sm:h-36 sm:w-48" />
